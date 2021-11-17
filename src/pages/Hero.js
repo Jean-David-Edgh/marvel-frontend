@@ -28,11 +28,11 @@ const Hero = () => {
   ) : (
     <div className="hero-container">
       <div className="hero">
-        <p>{data.results.name}</p>
-        <img
+        <p>{data.name}</p>
+        {/* <img
           src={data.thumbnail.path + "." + data.thumbnail.extension}
           alt={data.name}
-        />
+        /> */}
         <p>{data.description}</p>
       </div>
     </div>
