@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Personnages = () => {
-  const [data, setData] = useState({});
+  const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -23,21 +23,27 @@ const Personnages = () => {
   return isLoading ? (
     <div>En cours de chargement...</div>
   ) : (
-    <div className="personnages">
-      {data.results.map((hero) => {
-        return (
-          <Link key={hero._id} to={`/personnages/hero/${hero._id}`}>
-            <div>
-              <img
-                src={hero.thumbnail.path + "." + hero.thumbnail.extension}
-                alt={hero.name}
-              />
-              <p>{hero.name}</p>
-              <p>{hero.description}</p>
-            </div>
-          </Link>
-        );
-      })}
+    <div className="home">
+      <div className="hero-section">
+        <p>Prêts à (re)découvrir l'univers Marvel ?</p>
+      </div>
+
+      <div className="personnages">
+        {data.results.map((hero) => {
+          return (
+            <Link key={hero._id} to={`/hero/${hero._id}`}>
+              <div className="map-heroes">
+                <img
+                  src={hero.thumbnail.path + "." + hero.thumbnail.extension}
+                  alt={hero.name}
+                />
+                <p className="hero-name-map">{hero.name}</p>
+                <p className="hero-desc-map">{hero.description}</p>
+              </div>
+            </Link>
+          );
+        })}
+      </div>
     </div>
   );
 };

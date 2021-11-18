@@ -4,6 +4,8 @@ import axios from "axios";
 
 const Hero = () => {
   const { id } = useParams();
+  const params = useParams();
+  console.log(params);
 
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
@@ -11,9 +13,7 @@ const Hero = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:3000/personnages/hero/${id}`
-        );
+        const response = await axios.get(`http://localhost:3000/hero/${id}`);
         setData(response.data);
         setIsLoading(false);
       } catch (error) {

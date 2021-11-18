@@ -1,17 +1,157 @@
+/* GLOBAL RULES */
+.container {
+  background-color: black;
+  font-family: "Roboto", sans-serif;
+}
+
 /* HEADER */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 0;
-  width: 1280px;
+  width: 1496px;
   margin: 0 auto;
-  /* font-family: "Roboto", sans-serif; */
 }
 
 .header img {
-  height: 40px;
+  height: 50px;
   cursor: pointer;
+}
+
+.search {
+  background-color: #f5f6f7;
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+  width: 490px;
+  height: 37px;
+  padding-left: 40px;
+  opacity: 0.8;
+}
+
+.search:hover {
+  opacity: 0.9;
+}
+
+.nav {
+  width: 600px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-elem {
+  text-decoration: none;
+  background-color: red;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.nav-elem:hover {
+  opacity: 0.8;
+}
+
+/* HERO SECTION */
+.hero-section {
+  height: 300px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* HOME MAIN SECTION */
+.personnages {
+  width: 1496px;
+  margin: 0 auto;
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.home img {
+  height: 400px;
+  width: 350px;
+  object-fit: cover;
+  margin: 10px 0;
+}
+
+.home a {
+  text-decoration: none;
+}
+
+.map-heroes {
+  width: 350px;
+}
+
+.map-heroes:hover {
+  opacity: 0.9;
+}
+
+.hero-name-map {
+  text-align: center;
+  color: red;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.hero-desc-map {
+  color: aqua;
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+/* PAGINATION */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paginationItem {
+  background: #fff;
+  border: 2px solid #666;
+  padding: 10px 15px;
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+  position: relative;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.paginationItem span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.prev,
+.next {
+  background: #fff;
+  border: none;
+  padding: 10px;
+  color: blue;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.paginationItem.active {
+  border: 1px solid #888;
+  color: #888;
+  pointer-events: none;
+}
+
+.prev.disabled,
+.next.disabled {
+  pointer-events: none;
+  box-shadow: none;
+  color: #999;
 }
 
 /* FOOTER  */
@@ -22,5 +162,5 @@
   justify-content: center;
   align-items: center;
   border-top: 2px solid lightgrey;
-  /* font-family: "Roboto", sans-serif; */
+  color: red;
 }
